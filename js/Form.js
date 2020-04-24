@@ -5,6 +5,8 @@ class Form {
     this.isValid = false;
   }
 
+  // рендер формы без использования шаблона, так как собираем ее из элементов
+  // InputField 
   render() {
     const form = document.createElement(`form`);
     form.name = this.options.name;

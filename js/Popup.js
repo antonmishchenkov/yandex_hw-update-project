@@ -17,6 +17,7 @@ class Popup extends Component {
     );
   }
 
+  // инициализация
   init(id, contentClass, content) {
     this.id = id;
     this.contentClass = contentClass;
@@ -31,6 +32,8 @@ class Popup extends Component {
     })
   }
 
+  // при открытии каждый раз перезаполняем popup контентом в зависимости от
+  // инициализированных параметров
   open() {
     this.addContent();
     this.container.appendChild(this._element);

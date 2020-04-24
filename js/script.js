@@ -58,27 +58,29 @@ const popup = new Popup(popupContainer);
 const popupTitle = document.createElement('h3');
 const popupImage = document.createElement('img');
 
-
+// рендерим карточки и устанавлиаем валидацию для поля ссылки
 cardList.render();
 inputCardLink.useValidation('link');
 popupTitle.classList.add('popup__title');
 popupImage.classList.add('popup__image');
 popupImage.src = 'https://images.unsplash.com/photo-1560098332-0455d6f13087';
 
-function toggleFormAdd() {//коллбэк для открытия и закрытия формы добавления карточки
+function toggleFormAdd() { //коллбэк для открытия и закрытия формы добавления карточки
     popupTitle.textContent = OPTIONS.popups.addCard.title;
 
+    // инициализируем popup
     popup.init(
       OPTIONS.popups.addCard.id,
       OPTIONS.popups.addCard.contentClass,
       [popupTitle, formAddCard.render()]
     );
 
+    // устанавливаем событие на сабмит формы
     formAddCard.setSubmitAction(submitFormAdd);
     popup.open();
 }
 
-function openFormProfile() {//коллбэк для открытия формы профиля
+function openFormProfile() { //коллбэк для открытия формы профиля
     popupTitle.textContent = OPTIONS.popups.profile.title;
     inputProfileName.setValue(userInfoName.textContent);
     inputProfileJob.setValue(userInfoJob.textContent);
@@ -93,7 +95,7 @@ function openFormProfile() {//коллбэк для открытия формы 
     popup.open();
 }
 
-function submitFormProfile() {//коллбэк для сабмита формы профиля
+function submitFormProfile() { //коллбэк для сабмита формы профиля
     userInfoName.textContent = document.forms.profile.elements.name.value;
     userInfoJob.textContent = document.forms.profile.elements.job.value;
 }
@@ -103,6 +105,7 @@ function submitFormAdd() {
       document.forms.new.elements.name.value,
       document.forms.new.elements.link.value
     );
+    // добавляем новую карточку
     cardList.addCard(card.create());
 }
 

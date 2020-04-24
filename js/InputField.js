@@ -43,6 +43,7 @@ class InputField extends Component {
     return this.isValid;
   }
 
+  // устанавливаем валидацию для поля
   useValidation(type) {
     this.validation = type;
   }
