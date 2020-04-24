@@ -1,4 +1,4 @@
-const cards = document.querySelector('.places-list');
+//const cards = document.querySelector('.places-list');
 const userInfoName = document.querySelector('.user-info__name');
 const userInfoJob = document.querySelector('.user-info__job');
 const popupContainer = document.querySelector(".popup__container");
